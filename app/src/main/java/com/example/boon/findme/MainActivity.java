@@ -35,9 +35,8 @@ public class MainActivity extends AppCompatActivity {
                 String subscribe_topic = "msg/response/001";
                 String publish_topic = "msg/request/001";
                 String message = txtTitle.getText() + "####" + txtMessage.getText();
-                mqttHelper.subscribeToTopic(subscribe_topic);
+                //mqttHelper.subscribeToTopic(subscribe_topic);
                 mqttHelper.publishToTopic(publish_topic, message);
-                Toast.makeText(getApplicationContext(), "Message sent", Toast.LENGTH_LONG).show();
             }
         });
 

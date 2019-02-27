@@ -54,7 +54,7 @@ public class MqttHelper {
 
             @Override
             public void deliveryComplete(IMqttDeliveryToken iMqttDeliveryToken) {
-
+                Toast.makeText(context, "Message sent.", Toast.LENGTH_LONG).show();
             }
         });
     }
