@@ -32,8 +32,11 @@ public class MainActivity extends AppCompatActivity {
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String subscribe_topic = "msg/response/001";
+                String publish_topic = "msg/request/001";
                 String message = txtTitle.getText() + "####" + txtMessage.getText();
-                mqttHelper.publishToTopic("msg", message);
+                mqttHelper.subscribeToTopic(subscribe_topic);
+                mqttHelper.publishToTopic(publish_topic, message);
                 Toast.makeText(getApplicationContext(), "Message sent", Toast.LENGTH_LONG).show();
             }
         });

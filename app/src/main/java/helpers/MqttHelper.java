@@ -2,6 +2,9 @@ package helpers;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
+
+import com.example.boon.findme.MainActivity;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.DisconnectedBufferOptions;
@@ -30,7 +33,7 @@ public class MqttHelper {
     final String username = "vplfvxvo";
     final String password = "g9ssGd-XOM4z";
 
-    public MqttHelper(Context context){
+    public MqttHelper(final Context context){
         mqttAndroidClient = new MqttAndroidClient(context, serverUri, clientId);
         mqttAndroidClient.setCallback(new MqttCallbackExtended() {
             @Override
@@ -46,6 +49,7 @@ public class MqttHelper {
             @Override
             public void messageArrived(String topic, MqttMessage mqttMessage) throws Exception {
                 Log.w(TAG, mqttMessage.toString());
+                Toast.makeText(context, mqttMessage.toString(), Toast.LENGTH_LONG).show();
             }
 
             @Override
