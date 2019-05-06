@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String subscribe_topic = "msg/response/001";
-                String publish_topic = "msg/request/001";
+                String subscribe_topic = "msg/response/002";
+                String publish_topic = "msg/request/002xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
                 String message = txtTitle.getText() + "####" + txtMessage.getText();
                 //mqttHelper.subscribeToTopic(subscribe_topic);
                 mqttHelper.publishToTopic(publish_topic, message);
